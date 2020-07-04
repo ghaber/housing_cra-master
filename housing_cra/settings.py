@@ -52,7 +52,7 @@ DOWNLOADER_MIDDLEWARES = {
     # creo los headers del valor de DEFAULT_REQUEST_HEADERS
     'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware': 550,
     # habilito este middleware para sacar por log los headers de cada request
-    'housing_cra.middlewares.SpaHousingCrawlerDownloaderMiddleware':560,
+    'housing_cra.middlewares.SpaHousingCrawlerDownloaderMiddleware': 560,
     # 'scrapy.downloadermiddlewares.retry.RetryMiddleware': 550,
     # A middleware to retry failed requests that are potentially caused by temporary problems such as a connection timeout or HTTP 500 error.
     # 'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
@@ -133,6 +133,6 @@ DOWNLOAD_FAIL_ON_DATALOSS = False
 # LOG_STDOUT = False  # Route stdout to log
 
 # The amount of time (in secs) that the downloader should wait before downloading consecutive pages from the same website.
-DOWNLOAD_DELAY = 10
+DOWNLOAD_DELAY = 30
 # This setting is also affected by the RANDOMIZE_DOWNLOAD_DELAY setting(which is enabled by default). By default, Scrapy doesn’t wait a fixed amount of time between requests,
 # but uses a random interval between 0.5 * DOWNLOAD_DELAY and 1.5 * DOWNLOAD_DELAY.
