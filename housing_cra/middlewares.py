@@ -88,8 +88,18 @@ class SpaHousingCrawlerDownloaderMiddleware(object):
         # - or return a Request object
         # - or raise IgnoreRequest: process_exception() methods of
         #   installed downloader middleware will be called
+        spider.logger.info('URL of this request: %s', request.url)
+        spider.logger.info('Callback of this request: %s', str(request.callback))
+        spider.logger.info('Method of this request: %s', request.method)
+        for k, v in request.meta.items():
+            spider.logger.info('My Meta %s: %s', k, v)
+        spider.logger.info('Body of this request: %s', request.body)
         for k, v in request.headers.items():
-            spider.logger.info('My header %s: %s', str(k,'utf-8'), str(v[0],'utf-8'))
+            spider.logger.info('My header %s: %s', str(k, 'utf-8'), str(v[0], 'utf-8'))
+        spider.logger.info('Encoding of this request: %s', request.encoding)
+        spider.logger.info('Priority of this request: %s', str(request.priority))
+        spider.logger.info('dont_filter of this request: %s', str(request.dont_filter))
+
         #spider.logger.info('My request headers: %s', request.headers)
         return None
 
@@ -100,6 +110,7 @@ class SpaHousingCrawlerDownloaderMiddleware(object):
         # - return a Response object
         # - return a Request object
         # - or raise IgnoreRequest
+        spider.logger.info('Response: %s', response.text)
         return response
 
     def process_exception(self, request, exception, spider):

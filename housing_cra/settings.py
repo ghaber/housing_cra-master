@@ -41,7 +41,7 @@ CONCURRENT_REQUESTS_PER_IP = 1
 
 # Victor: Whether to enable the cookies middleware. If disabled, no cookies will be sent to web servers.
 COOKIES_ENABLED = False
-COOKIES_DEBUG = False
+COOKIES_DEBUG = True
 
 # -*-  -*- -*- -*- -*- -*- -*-
 
